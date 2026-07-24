@@ -1,0 +1,41 @@
+:root {
+  --green-hover: #6d7b75;
+  --grey-green: #829b91;
+  --badges: #f2f4f7;
+  --inputs: #f7f7f7;
+  --rating: #ffc531;
+  --gray: #6c717b;
+  --white: #ffffff;
+  --text: #475467;
+  --main: #101828;
+  --gray-light: #dadde1;
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  font-family: Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  line-height: 0;
+}

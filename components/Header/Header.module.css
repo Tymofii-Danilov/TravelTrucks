@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+}
+.logo {
+  padding: 28px 0;
+}
+.navBar {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin-left: 450px;
+  padding: 24px 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--main);
+}
+.active {
+  color: var(--grey-green);
+}
