@@ -13,4 +13,42 @@
   line-height: 133%;
   text-align: center;
   color: var(--main);
+  margin-bottom: 16px;
+}
+.text {
+  margin-bottom: 43px;
+}
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+.clearBtn {
+  border: 1px solid var(--gray-light);
+  border-radius: 200px;
+  padding: 16px 32px;
+  width: 192px;
+  height: 56px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--main);
+}
+.viewBtn {
+  border-radius: 200px;
+  border: none;
+  padding: 16px 31.5px;
+  width: 192px;
+  height: 56px;
+  background: var(--grey-green);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
 }

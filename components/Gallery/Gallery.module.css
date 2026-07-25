@@ -1,0 +1,20 @@
+.img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 17px;
+  width: 638px;
+  height: 505px;
+  margin-bottom: 27px;
+  object-fit: cover;
+}
+.thumb {
+  position: relative;
+  width: 136px;
+  height: 144px;
+  overflow: hidden;
+  border-radius: 16px;
+  object-fit: contain;
+}
+.thumb:global(.swiper-slide-thumb-active) {
+  border: 3px solid var(--grey-green);
+}

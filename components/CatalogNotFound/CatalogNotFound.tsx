@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import css from './CatalogNotFound.module.css';
 
-export default function CatalogNotFound() {
+type Props = {
+  noResults: () => void;
+};
+
+export default function CatalogNotFound({ noResults }: Props) {
   return (
     <div className={css.empty}>
       <Image
@@ -17,9 +21,28 @@ export default function CatalogNotFound() {
         <br />
         Try adjusting your search or clearing some filters.
       </p>
-      <div>
-        <button>Clear filters</button>
-        <button>View all campers</button>
+      <div className={css.buttons}>
+        <button
+          type="button"
+          className={css.clearBtn}
+          onClick={() => {
+            noResults();
+          }}
+        >
+          <svg className={css.clearIcon} width={24} height={24}>
+            <use href="/sprite.svg#cross"></use>
+          </svg>
+          Clear filters
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            noResults();
+          }}
+          className={css.viewBtn}
+        >
+          View all campers
+        </button>
       </div>
     </div>
   );

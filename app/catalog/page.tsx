@@ -40,7 +40,6 @@ export default function Catalog() {
       };
     },
   });
-  console.log(data?.campers);
 
   const campers = data?.campers ?? [];
   const hasCampers = campers.length > 0;
@@ -49,12 +48,12 @@ export default function Catalog() {
   return (
     <Container className={css.catalogPage}>
       <aside>
-        <Sidebar onSearch={setFilters} />
+        <Sidebar filters={filters} onSearch={setFilters} />
       </aside>
       {isLoading && <Loader />}
       {isFetchingNextPage && <Loader />}
       {isError && <p>Whoops, something went wrong! Please try again!</p>}
-      {showNoResults && <CatalogNotFound />}
+      {showNoResults && <CatalogNotFound noResults={() => setFilters({})} />}
       {!isError && (
         <div className={css.catalogBtnWrap}>
           <ul className={css.catalogList}>

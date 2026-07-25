@@ -1,33 +1,33 @@
 'use client';
 import { getCampersFilters } from '@/lib/api';
 import css from './Sidebar.module.css';
-import { CamperFilters } from '@/types/types';
+import { CamperFilters, CamperFiltersInit } from '@/types/types';
 import { Field, Form, Formik } from 'formik';
 import { useQuery } from '@tanstack/react-query';
-import { log } from 'util';
 import { formatFilterLabel } from '@/tools/format';
 
 type Props = {
   onSearch: (filters: CamperFilters) => void;
+  filters: CamperFiltersInit;
 };
 
-export default function Sidebar({ onSearch }: Props) {
-  const initialValues: CamperFilters = {
-    location: '',
-    forms: undefined,
-    engines: undefined,
-    transmissions: undefined,
+export default function Sidebar({ onSearch, filters }: Props) {
+  const initialValues = {
+    location: filters.location,
+    form: filters.form,
+    engine: filters.engine,
+    transmission: filters.transmission,
   };
   const handleSubmit = (values: CamperFilters) => onSearch(values);
 
-  const { data: filters } = useQuery({
+  const { data } = useQuery({
     queryKey: ['campers-filters'],
     queryFn: getCampersFilters,
   });
 
   return (
     <section className={css.sidebar}>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      <Formik initialValues={initialValues} onSubmit={handleSubmit} enableReinitialize={true}>
         {({ resetForm }) => (
           <Form className={css.form}>
             <label htmlFor="location" className={css.locationLegend}>
@@ -49,7 +49,7 @@ export default function Sidebar({ onSearch }: Props) {
               <h3>Filters</h3>
               <fieldset className={css.fieldset}>
                 <p>Camper form</p>
-                {filters?.forms?.map(item => {
+                {data?.forms?.map(item => {
                   return (
                     <label key={item} className={css.radio}>
                       <Field type="radio" value={item} name="form" />
@@ -68,7 +68,7 @@ export default function Sidebar({ onSearch }: Props) {
               </fieldset>
               <fieldset className={css.fieldset}>
                 <p>Engine</p>
-                {filters?.engines?.map(item => {
+                {data?.engines?.map(item => {
                   return (
                     <label key={item} className={css.radio}>
                       <Field type="radio" value={item} name="engine" />
@@ -87,7 +87,7 @@ export default function Sidebar({ onSearch }: Props) {
               </fieldset>
               <fieldset className={css.fieldset}>
                 <p>Transmission</p>
-                {filters?.transmissions?.map(item => {
+                {data?.transmissions?.map(item => {
                   return (
                     <label key={item} className={css.radio}>
                       <Field type="radio" value={item} name="transmission" />
