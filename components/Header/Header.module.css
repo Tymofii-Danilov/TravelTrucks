@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  background: var(--inputs);
 }
 .logo {
   padding: 28px 0;

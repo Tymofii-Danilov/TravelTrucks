@@ -1,0 +1,34 @@
+.catalogPage {
+  display: flex;
+  gap: 64px;
+  padding: 64px;
+}
+
+.catalogList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+.loadBtn {
+  border: 1px solid var(--gray-light);
+  border-radius: 200px;
+  padding: 16px 32px;
+  width: 145px;
+  height: 56px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--main);
+  transition: 250ms ease;
+}
+.loadBtn:hover,
+.loadBtn:focus {
+  border: 1px solid var(--green-hover);
+}
+.catalogBtnWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
