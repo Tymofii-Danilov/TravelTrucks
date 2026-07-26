@@ -23,7 +23,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                className={`${css.link} ${pathname === '/catalog' ? css.active : ''}`}
+                className={`${css.link} ${pathname.startsWith('/catalog') ? css.active : ''}`}
                 href="/catalog"
               >
                 Catalog

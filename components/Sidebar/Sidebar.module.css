@@ -1,9 +1,9 @@
 .sidebar {
   border-radius: 20px;
   padding: 24px;
+  background: var(--inputs);
   width: 360px;
   height: 840px;
-  background: var(--inputs);
 }
 .form {
   display: flex;

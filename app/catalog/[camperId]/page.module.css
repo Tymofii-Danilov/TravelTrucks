@@ -106,6 +106,9 @@
   line-height: 150%;
   color: var(--main);
 }
+.reviewsSection {
+  padding-bottom: 278px;
+}
 .reviewsWrap {
   display: flex;
   gap: 24px;

@@ -9,6 +9,7 @@ import { useState } from 'react';
 import css from './page.module.css';
 import Loader from './loading';
 import CatalogNotFound from '@/components/CatalogNotFound/CatalogNotFound';
+import Error from '../error';
 
 export default function Catalog() {
   const [filters, setFilters] = useState<CamperFilters>({});
@@ -20,6 +21,8 @@ export default function Catalog() {
     isFetching,
     isFetchingNextPage,
     isError,
+    error,
+    refetch,
     isLoading,
     isFetched,
   } = useInfiniteQuery({
@@ -43,7 +46,7 @@ export default function Catalog() {
 
   const campers = data?.campers ?? [];
   const hasCampers = campers.length > 0;
-  const showNoResults = isFetched && !isError && !hasCampers;
+  const showNoResults = !isLoading && isFetched && !isError && !hasCampers;
 
   return (
     <Container className={css.catalogPage}>
@@ -52,7 +55,7 @@ export default function Catalog() {
       </aside>
       {isLoading && <Loader />}
       {isFetchingNextPage && <Loader />}
-      {isError && <p>Whoops, something went wrong! Please try again!</p>}
+      {isError && <Error error={error} reset={refetch} />}
       {showNoResults && <CatalogNotFound noResults={() => setFilters({})} />}
       {!isError && (
         <div className={css.catalogBtnWrap}>

@@ -12,11 +12,7 @@ export default function NotFound() {
         alt="Not found picture"
       />
       <h2 className={css.title}>Page not found</h2>
-      <p className={css.text}>
-        We couldn`t find any campers that match your filters.
-        <br />
-        Try adjusting your search or clearing some filters.
-      </p>
+      <p className={css.text}>There is no such page you looking for</p>
     </div>
   );
 }

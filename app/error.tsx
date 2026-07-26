@@ -8,10 +8,14 @@ type Props = {
 
 export default function Error({ error, reset }: Props) {
   return (
-    <div>
-      <h2 className={css.heading}>Error</h2>
-      <p className={css.text}>{error.message}</p>
-      <button onClick={reset}>Please try again</button>
+    <div className={css.backdrop}>
+      <div className={css.errorBlock}>
+        <h2 className={css.heading}>Error</h2>
+        <p className={css.text}>{error.name}</p>
+        <button className={css.tryAgain} onClick={reset}>
+          Please try again
+        </button>
+      </div>
     </div>
   );
 }
