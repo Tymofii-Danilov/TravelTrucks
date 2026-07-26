@@ -33,11 +33,14 @@ export const getCamperDetails = async (camperId: string) => {
 };
 
 export const getCamperReviews = async (camperId: string) => {
-  const res = await axios.get<CamperReviews>(`/campers/${camperId}/reviews`);
+  const res = await axios.get<CamperReviews[]>(`/campers/${camperId}/reviews`);
   return res.data;
 };
 
-export const bookRequest = async (camperId: string) => {
-  const res = await axios.post<string>(`/campers/${camperId}/booking-requests`, {});
+export const bookRequest = async (camperId: string, name: string, email: string) => {
+  const res = await axios.post<string>(`/campers/${camperId}/booking-requests`, {
+    name,
+    email,
+  });
   return res.data;
 };

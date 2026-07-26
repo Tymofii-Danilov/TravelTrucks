@@ -7,7 +7,7 @@ import { Container } from '../Container/Container';
 export default function Header() {
   const pathname = usePathname();
   return (
-    <section>
+    <section className={css.headerSection}>
       <Container className={css.header}>
         <Link className={css.logo} href="/">
           <svg width={136} height={16}>

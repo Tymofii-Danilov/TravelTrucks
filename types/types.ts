@@ -21,9 +21,9 @@ export type CamperFilters = {
 
 export type CamperFiltersInit = {
   location?: string;
-  form?: form[];
-  transmission?: transmission[];
-  engine?: engine[];
+  form?: form;
+  transmission?: transmission;
+  engine?: engine;
 };
 
 export type CamperItem = {

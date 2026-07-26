@@ -13,10 +13,16 @@ type Props = {
 
 export default function Sidebar({ onSearch, filters }: Props) {
   const initialValues = {
-    location: filters.location,
+    location: filters.location ?? '',
     form: filters.form,
     engine: filters.engine,
     transmission: filters.transmission,
+  };
+  const emptyFilters = {
+    location: '',
+    form: undefined,
+    engine: undefined,
+    transmission: undefined,
   };
   const handleSubmit = (values: CamperFilters) => onSearch(values);
 
@@ -113,7 +119,7 @@ export default function Sidebar({ onSearch, filters }: Props) {
                 type="button"
                 className={css.clearButton}
                 onClick={() => {
-                  onSearch(initialValues);
+                  onSearch(emptyFilters);
                   resetForm();
                 }}
               >
