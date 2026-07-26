@@ -22,7 +22,7 @@ export default async function CamperDetails({ params }: Props) {
 
   return (
     <Container>
-      <div className={css.topSection}>
+      <section className={css.topSection}>
         <div className={css.card}>
           <Gallery camper={camper} />
         </div>
@@ -97,7 +97,7 @@ export default async function CamperDetails({ params }: Props) {
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <section className={css.reviewsSection}>
         <h2 className={css.name}>Reviews</h2>
         <div className={css.lowerSection}>

@@ -32,14 +32,21 @@ export default function Gallery(info: GalleryProps) {
         {gallery.map(item => {
           return (
             <SwiperSlide className={css.img} key={item.id}>
-              <Image src={item.original} alt={item.camperId} fill style={{ objectFit: 'cover' }} />
+              <Image
+                src={item.original}
+                alt={item.camperId}
+                fill
+                sizes="100%"
+                style={{ objectFit: 'cover' }}
+                loading={'eager'}
+              />
             </SwiperSlide>
           );
         })}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
-        loop={true}
+        // loop={true}
         spaceBetween={32}
         slidesPerView={4}
         freeMode={true}
@@ -51,7 +58,13 @@ export default function Gallery(info: GalleryProps) {
         {gallery.map(item => {
           return (
             <SwiperSlide className={css.thumb} key={item.id}>
-              <Image src={item.thumb} alt={item.camperId} fill style={{ objectFit: 'cover' }} />
+              <Image
+                src={item.thumb}
+                alt={item.camperId}
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="136px"
+              />
             </SwiperSlide>
           );
         })}
