@@ -6,6 +6,9 @@
   border: none;
   background: var(--inputs);
   font-size: 16px;
+  color: var(--main);
+}
+.field:placeholder-shown {
   color: var(--gray);
 }
 .nameWrap {
@@ -28,6 +31,11 @@
   line-height: 150%;
   letter-spacing: -0.01em;
   color: var(--white);
+  transition: 250ms ease;
+}
+.submitBtn:hover,
+.subtimBtn:focus {
+  background: var(--green-hover);
 }
 .error {
   border: 1px solid #e44848;

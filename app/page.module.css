@@ -29,4 +29,9 @@
   width: 173px;
   height: 56px;
   background: var(--grey-green);
+  transition: 250ms ease;
+}
+.cta:hover,
+.cta:focus {
+  background: var(--green-hover);
 }
