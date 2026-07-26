@@ -3,6 +3,7 @@ import { bookRequest } from '@/lib/api';
 import * as Yup from 'yup';
 import { Field, Form, Formik } from 'formik';
 import css from './ReviewsForm.module.css';
+import { Bounce, ToastContainer, toast } from 'react-toastify';
 type Props = {
   camperId: string;
 };
@@ -11,12 +12,14 @@ export default function ReviewsForm({ camperId }: Props) {
     name: Yup.string().min(2, 'Please enter your name.').required('Please enter your name.'),
     email: Yup.string().email('Invalid email.').required('Please enter your email.'),
   });
+  const notify = () => toast('Booking request accepted!');
   return (
     <Formik
       initialValues={{ name: '', email: '' }}
       validationSchema={validationSchema}
       onSubmit={async (values, { resetForm }) => {
         await bookRequest(camperId, values.name, values.email);
+        notify();
         resetForm();
       }}
     >
@@ -58,6 +61,19 @@ export default function ReviewsForm({ camperId }: Props) {
           <button className={css.submitBtn} type="submit">
             Send
           </button>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Bounce}
+          />
         </Form>
       )}
     </Formik>

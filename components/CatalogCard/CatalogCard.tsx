@@ -61,7 +61,7 @@ export default function CatalogCard({ camper }: Props) {
             <p>{formatFilterLabel(i.form)}</p>
           </div>
         </div>
-        <Link className={css.moreBtn} href={`/catalog/${i.id}`}>
+        <Link className={css.moreBtn} href={`/catalog/${i.id}`} target="_blank">
           Show more
         </Link>
       </div>
