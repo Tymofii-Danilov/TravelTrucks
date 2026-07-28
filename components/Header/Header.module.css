@@ -1,5 +1,8 @@
 .header {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 .headerSection {
   background: var(--inputs);
@@ -8,16 +11,65 @@
   padding: 28px 0;
 }
 .navBar {
-  list-style: none;
+  display: none;
+}
+.burgerClosed {
+  background-color: transparent;
+  border: none;
+  transition: 250ms ease;
+}
+.burgerOpen {
+  transform: rotate(90deg);
+  transition: 250ms ease;
+}
+.burgerIcon {
+  stroke: black;
+  fill: black;
+}
+.mobMenuClosed {
+  opacity: 0;
+  position: absolute;
+  top: 71px;
+  right: 0;
+  transition: 250ms ease;
+}
+.mobMenuOpen {
+  opacity: 1;
+  background-color: var(--inputs);
+  padding: 40px;
+  transition: 250ms ease;
+  z-index: 999;
+}
+.mobNavBar {
   display: flex;
-  gap: 32px;
-  margin-left: 450px;
-  padding: 24px 0;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  text-align: center;
-  color: var(--main);
+  flex-direction: column;
+  gap: 40px;
+  font-size: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .burgerClosed {
+    display: none;
+  }
+  .navBar {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    margin-left: 450px;
+    padding: 24px 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: var(--main);
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .header {
+    justify-content: unset;
+  }
+  .navBar {
+    margin-left: 450px;
+  }
 }
 .active {
   color: var(--grey-green);

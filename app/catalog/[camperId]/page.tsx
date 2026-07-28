@@ -51,12 +51,12 @@ export default async function CamperDetails({ params }: Props) {
           <div className={css.techInfo}>
             <h2 className={css.name}>Vehicle details</h2>
             <div className={css.amenities}>
-              <div className={css.amenitiesContent}>
+              <ul className={css.amenitiesContent}>
                 {camper.amenities.map(item => {
                   return (
-                    <div key={item} className={css.amenity}>
+                    <li key={item} className={css.amenity}>
                       {formatFilterLabel(item)}
-                    </div>
+                    </li>
                   );
                 })}
                 {camper.amenities.map(item => {
@@ -66,7 +66,7 @@ export default async function CamperDetails({ params }: Props) {
                     </div>
                   );
                 })}
-              </div>
+              </ul>
             </div>
             <div className={css.line}></div>
             <div className={css.specs}>

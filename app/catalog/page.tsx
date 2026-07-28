@@ -34,7 +34,7 @@ export default function Catalog() {
     initialPageParam: 1,
     getNextPageParam: lastResponse => {
       const nextPage = lastResponse.page + 1;
-      return nextPage < lastResponse.totalPages ? nextPage : undefined;
+      return nextPage <= lastResponse.totalPages ? nextPage : undefined;
     },
     select: data => {
       return {

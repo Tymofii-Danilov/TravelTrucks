@@ -10,7 +10,7 @@
 .firstHeading {
   font-weight: 600;
   font-size: 48px;
-  line-height: 67%;
+  line-height: 80%;
   color: var(--inputs);
   margin-bottom: 16px;
 }

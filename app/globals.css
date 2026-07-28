@@ -39,3 +39,12 @@ a {
   text-decoration: none;
   line-height: 0;
 }
+
+button,
+a {
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}

@@ -46,7 +46,6 @@ export default function Gallery(info: GalleryProps) {
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
-        // loop={true}
         spaceBetween={32}
         slidesPerView={4}
         freeMode={true}

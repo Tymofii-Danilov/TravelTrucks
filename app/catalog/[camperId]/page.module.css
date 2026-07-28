@@ -64,6 +64,12 @@
   overflow: hidden;
   margin: 16px 0;
 }
+.amenitiesContent {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+  animation: scroll 15s linear infinite;
+}
 .amenity {
   border-radius: 100px;
   padding: 12px 18px;
@@ -73,12 +79,6 @@
   line-height: 150%;
   text-align: center;
   color: var(--main);
-}
-.amenitiesContent {
-  display: flex;
-  gap: 8px;
-  width: max-content;
-  animation: scroll 15s linear infinite;
 }
 @keyframes scroll {
   from {
