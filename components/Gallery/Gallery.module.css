@@ -2,18 +2,37 @@
   position: relative;
   overflow: hidden;
   border-radius: 17px;
-  width: 638px;
-  height: 505px;
-  margin-bottom: 27px;
+  height: 350px;
+  margin-bottom: 8px;
   object-fit: cover;
 }
 .thumb {
   position: relative;
-  width: 136px;
-  height: 144px;
+  height: 120px;
   overflow: hidden;
   border-radius: 16px;
   object-fit: contain;
+}
+@media only screen and (min-width: 768px) {
+  .img {
+    height: 450px;
+    margin-bottom: 16px;
+  }
+  .thumb {
+    height: 120px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .img {
+    width: 638px;
+    height: 505px;
+    margin-bottom: 27px;
+  }
+  .thumb {
+    width: 136px;
+    height: 144px;
+  }
 }
 .thumb:global(.swiper-slide-thumb-active) {
   border: 3px solid var(--grey-green);

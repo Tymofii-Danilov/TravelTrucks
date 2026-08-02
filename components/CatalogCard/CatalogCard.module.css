@@ -1,22 +1,33 @@
 .item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   list-style: none;
   border-radius: 16px;
   padding: 24px;
-  width: 888px;
-  height: 312px;
-  background: var(--inputs);
-  display: flex;
   gap: 24px;
+  background: var(--inputs);
+}
+@media only screen and (min-width: 768px) {
+  .item {
+    width: calc((100% - 16px) / 2);
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .item {
+    width: calc((100% - 32px) / 3);
+  }
 }
 .itemInfo {
   display: flex;
   flex-direction: column;
   gap: 24px;
   width: 100%;
-  padding-right: 73px;
+  flex: 1;
 }
 .namePrice {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 .name,
@@ -53,15 +64,19 @@
   color: var(--main);
 }
 .description {
-  white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
   max-width: 525px;
   line-height: 150%;
   color: var(--text);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  overflow: hidden;
 }
 .badgesWrap {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 .badge {
@@ -97,6 +112,7 @@
   letter-spacing: -0.01em;
   color: var(--white);
   transition: 250ms ease;
+  margin-top: auto;
 }
 .moreBtn:hover,
 .moreBtn:focus {
@@ -104,4 +120,26 @@
 }
 .image {
   border-radius: 16px;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 1440px) {
+  .item {
+    width: 888px;
+    height: 312px;
+    flex-direction: row;
+  }
+  .itemInfo {
+    padding-right: 73px;
+  }
+  .namePrice {
+    flex-direction: row;
+  }
+  .description {
+    white-space: nowrap;
+  }
+  .badgesWrap {
+    flex-wrap: nowrap;
+  }
 }

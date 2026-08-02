@@ -110,24 +110,24 @@ export default function Sidebar({ onSearch, filters }: Props) {
                   );
                 })}
               </fieldset>
-            </div>
-            <div className={css.buttons}>
-              <button type="submit" className={css.searchButton}>
-                Search
-              </button>
-              <button
-                type="button"
-                className={css.clearButton}
-                onClick={() => {
-                  onSearch(emptyFilters);
-                  resetForm();
-                }}
-              >
-                <svg className={css.clearIcon} width={24} height={24}>
-                  <use href="/sprite.svg#cross"></use>
-                </svg>
-                Clear filters
-              </button>
+              <div className={css.buttons}>
+                <button type="submit" className={css.searchButton}>
+                  Search
+                </button>
+                <button
+                  type="button"
+                  className={css.clearButton}
+                  onClick={() => {
+                    onSearch(emptyFilters);
+                    resetForm();
+                  }}
+                >
+                  <svg className={css.clearIcon} width={24} height={24}>
+                    <use href="/sprite.svg#cross"></use>
+                  </svg>
+                  Clear filters
+                </button>
+              </div>
             </div>
           </Form>
         )}

@@ -48,10 +48,18 @@ export default function Catalog() {
   const hasCampers = campers.length > 0;
   const showNoResults = !isLoading && isFetched && !isError && !hasCampers;
 
+  const [filtersOpen, setFiltersOpen] = useState(false);
+
   return (
     <Container className={css.catalogPage}>
-      <aside>
-        <Sidebar filters={filters} onSearch={setFilters} />
+      <aside className={css.filtersWrap}>
+        <button onClick={() => setFiltersOpen(!filtersOpen)} className={css.filtersBtn}>
+          Filters
+        </button>
+
+        <div className={`${css.sidebarContainer} ${filtersOpen ? css.active : ''}`}>
+          <Sidebar filters={filters} onSearch={setFilters} />
+        </div>
       </aside>
       {isLoading && <Loader />}
       {isFetchingNextPage && <Loader />}

@@ -9,6 +9,7 @@ type Props = {
 
 export default function CatalogCard({ camper }: Props) {
   const i = camper;
+
   return (
     <li className={css.item}>
       <Image className={css.image} src={i.coverImage} alt={i.name} width={219} height={240} />

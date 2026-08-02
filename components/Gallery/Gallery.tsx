@@ -46,13 +46,19 @@ export default function Gallery(info: GalleryProps) {
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
-        spaceBetween={32}
-        slidesPerView={4}
+        spaceBetween={8}
+        slidesPerView={3}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper"
         style={{ objectFit: 'cover' }}
+        breakpoints={{
+          768: {
+            spaceBetween: 16,
+            slidesPerView: 3,
+          },
+        }}
       >
         {gallery.map(item => {
           return (
